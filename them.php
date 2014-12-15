@@ -14,14 +14,14 @@ mysqli_query($sqli,"SET NAMES 'UTF8'");
     <td colspan="2"><input type="text" name="tenchuyenmuc" id="tenchuyenmuc"></td>
   </tr>
   <tr>
-    <td>Loại Tin</td>
+    <td>Các loại tin</td>
     <?php
 	$sql= "select * from loaitin";
 	$loaitin=mysqli_query($sqli,$sql);
 	?>
     <td colspan="2"><select name="loaitin" id="loaitin">
     <?php
-	while($dong_loaitin = mysqli_fetch_array($loaitin))
+    while($dong_loaitin = mysqli_fetch_array($loaitin) && $loaitin)
 	{
 	?>
     <option value="<?php echo $dong_loaitin["idloaitin"]?>"> <?php echo $dong_loaitin["tenloaitin"]?> </option>
